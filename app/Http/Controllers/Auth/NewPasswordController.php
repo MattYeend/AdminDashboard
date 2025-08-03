@@ -45,14 +45,7 @@ class NewPasswordController extends Controller
         // database. Otherwise we will parse the error and return the response.
         $status = Password::reset(
             $request->only('email', 'password', 'password_confirmation', 'token'),
-            function ($user) use ($request) {
-                $user->forceFill([
-                    'password' => Hash::make($request->password),
-                    'remember_token' => Str::random(60),
-                ])->save();
-
-                event(new PasswordReset($user));
-            }
+            fn($user) => $this->resetPassword($user, $request->password)
         );
 
         // If the password was successfully reset, we will redirect the user back to
@@ -65,5 +58,15 @@ class NewPasswordController extends Controller
         throw ValidationException::withMessages([
             'email' => [__($status)],
         ]);
+    }
+
+    private function resetPassword($user, string $password): void
+    {
+        $user->forceFill([
+            'password' => Hash::make($password),
+            'remember_token' => Str::random(60),
+        ])->save();
+
+        event(new PasswordReset($user));
     }
 }
