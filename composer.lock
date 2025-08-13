@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a9d3dc0012c2ae2eee2329449162d069",
+    "content-hash": "d132e62b4aba1124f2de6f2c85b5f71f",
     "packages": [
         {
             "name": "brick/math",
@@ -2138,6 +2138,72 @@
                 }
             ],
             "time": "2024-12-08T08:18:47+00:00"
+        },
+        {
+            "name": "mattyeend/health-status",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MattYeend/Health-Status.git",
+                "reference": "b219ec07d6d6934be1c4593aa594a35ebb3ead0f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MattYeend/Health-Status/zipball/b219ec07d6d6934be1c4593aa594a35ebb3ead0f",
+                "reference": "b219ec07d6d6934be1c4593aa594a35ebb3ead0f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^10.0 || ^11.0 || ^12.0",
+                "laravel/framework": "^10.0 || ^11.0 || ^12.0",
+                "php": ">=8.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "MattYeend\\HealthStatus\\HealthStatusServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MattYeend\\HealthStatus\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Yeend",
+                    "email": "mail@mattyeend.co.uk"
+                }
+            ],
+            "description": "Laravel package to check database, ping, queue, cron, and disk health.",
+            "keywords": [
+                "health",
+                "health-status",
+                "laravel",
+                "package",
+                "status"
+            ],
+            "support": {
+                "issues": "https://github.com/MattYeend/Health-Status/issues",
+                "source": "https://github.com/MattYeend/Health-Status/tree/v1.1.2"
+            },
+            "funding": [
+                {
+                    "url": "https://www.buymeacoffee.com/mattyeend",
+                    "type": "buy_me_a_coffee"
+                },
+                {
+                    "url": "https://github.com/MattYeend",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-08-12T15:39:52+00:00"
         },
         {
             "name": "monolog/monolog",
